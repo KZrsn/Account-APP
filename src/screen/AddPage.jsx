@@ -7,6 +7,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
+import AccountBox from '../components/accountBox';
 
 export default AddPage = ({ navigation }) => {
 
@@ -16,6 +17,22 @@ export default AddPage = ({ navigation }) => {
   const [selectPay, setSelectPay] = useState();
   const [reMark, setRemark] = useState('');
   const pickerRef = useRef();
+
+
+  // 新增帳款
+  // const addNewAccount = () => {
+  //   if (cart.indexOf(ice[0]) !== -1) return;
+  //   const exist = cart.find((x) => x.name === name);
+  //   if (exist) { // 假如推車裡已經有商品
+  //     setCart(cart.map((x) =>
+  //       x.name === name ? { ...exist, amount: exist.amount + value } : x
+  //     ));
+  //   } else { // 假如推車沒商品
+  //     setCart([...cart, { ...ice[0], amount: value }]);
+  //   }
+  //   alert('成功加入購物車');
+  // }
+
 
 function open() {
   pickerRef.current.focus();
@@ -43,6 +60,7 @@ function close() {
         onValueChange={(itemValue, itemIndex) =>
           setSelectClassification(itemValue)
         }
+
       >
         <Picker.Item label='早餐' value='早餐' />
         <Picker.Item label='午餐' value='午餐' />
@@ -86,6 +104,7 @@ function close() {
           <Text>儲存</Text>
         </Pressable>
       </View>
+      <AccountBox />
     </View>
   )
 }

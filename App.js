@@ -1,5 +1,5 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import React from 'react';
+import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import A from './src/screen/A';
@@ -18,6 +18,12 @@ const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 
 const App = () => {
+
+  const [amount, setAmount] = useState('');
+  const [selectClassification, setSelectClassification] = useState();
+  const [selectPay, setSelectPay] = useState();
+  const [reMark, setRemark] = useState('');
+
   return (
     <NavigationContainer>
       {/* <HeaderDrawer /> */}
